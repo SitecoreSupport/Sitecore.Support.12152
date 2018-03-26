@@ -3,7 +3,7 @@
   using Sitecore.XA.Foundation.JsonVariants.Renderers;
   using System.Collections.Generic;
 
-  public class JsonHighlightDecoratorRenderer : JsonRenderer
+  public class JsonHighlightDecoratorRenderer : Sitecore.Support.XA.Foundation.JsonVariants.Renderers.JsonRenderer
   {
     protected override string CloseBracket => $"<span class=\"token punctuation close bracket\">{base.CloseBracket}</span>";
 

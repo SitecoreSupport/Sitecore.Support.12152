@@ -10,18 +10,18 @@
     {
       if (Context.PageMode.IsExperienceEditorEditing)
       {
-        return new JsonHighlightDecoratorRenderer(name, value, valueType);
+        return new Sitecore.Support.XA.Foundation.JsonVariants.Renderers.JsonHighlightDecoratorRenderer(name, value, valueType);
       }
-      return new JsonRenderer(name, value, valueType);
+      return new Sitecore.Support.XA.Foundation.JsonVariants.Renderers.JsonRenderer(name, value, valueType);
     }
 
     public IJsonRenderer Create(string name, IEnumerable<string> values, JsonValueType valueType)
     {
       if (Context.PageMode.IsExperienceEditorEditing)
       {
-        return new JsonHighlightDecoratorRenderer(name, values, valueType);
+        return new Sitecore.Support.XA.Foundation.JsonVariants.Renderers.JsonHighlightDecoratorRenderer(name, values, valueType);
       }
-      return new JsonRenderer(name, values, valueType);
+      return new Sitecore.Support.XA.Foundation.JsonVariants.Renderers.JsonRenderer(name, values, valueType);
     }
   }
 }

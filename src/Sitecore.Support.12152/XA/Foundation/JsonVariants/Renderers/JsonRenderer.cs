@@ -72,7 +72,36 @@
         return this.Value;
       }
       string result = $"\"{this.Value}\"";
-      string text = string.Join(this.Comma, this.Values);
+      #region Modified code
+      string text;
+      #endregion
+      #region Added code
+      if (valueType.Equals(JsonValueType.Array))
+      {
+        StringBuilder textB = new StringBuilder();
+        for (int i = 0; i < Values.Count; i++)
+        {
+          if (!Values[i].StartsWith((OpenBracket))) //for Multilist field
+          {
+            textB.Append(OpenBracket);
+            textB.Append(Values[i]);
+            textB.Append(CloseBracket);
+
+          }
+          else
+          {
+            textB.Append(Values[i]);
+          }
+          if (i != Values.Count - 1)
+            textB.Append(Comma);
+        }
+        text = textB.ToString();
+      }
+      else
+      {
+        text = string.Join(this.Comma, this.Values);
+      }
+      #endregion
       if (this.Name.IsNullOrEmpty())
       {
         valueType = this.ValueType;

@@ -8,7 +8,7 @@ namespace Sitecore.Support
   {
     public void Configure(IServiceCollection serviceCollection)
     {
-      serviceCollection.AddSingleton<IJsonRendererFactory, JsonRendererFactory>();
+      serviceCollection.AddSingleton<IJsonRendererFactory, Sitecore.Support.XA.Foundation.JsonVariants.Renderers.JsonRendererFactory>();
     }
   }
 }
